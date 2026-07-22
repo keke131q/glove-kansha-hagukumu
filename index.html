@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>親子で楽しく学ぶ！グローブメンテナンス特別講座</title>
+  <meta name="description" content="グローブを磨き、心を磨く。人間力を育む60分のオンライン特別講座です。">
+  
+  <!-- Google Fonts: 丸みのある親しみやすいフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#FF8A00', /* ワクワクするオレンジ */
+            secondary: '#FFD700', /* 明るいイエロー */
+            accent: '#00A8E8', /* 爽やかなブルー */
+            light: '#FFF9F0', /* 優しい背景色 */
+            dark: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #FFF9F0; color: #333; }
+    .hero-bg {
+      background: linear-gradient(135deg, #FF8A00 0%, #FFD700 100%);
+    }
+    .btn-line {
+      background-color: #06C755;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-line:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6, 199, 85, 0.4);
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave svg {
+      position: relative;
+      display: block;
+      width: calc(134% + 1.3px);
+      height: 60px;
+    }
+    .wave .shape-fill { fill: #FFF9F0; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ヘッダー（Heroセクション） -->
+  <header class="relative hero-bg text-white text-center pt-16 pb-32 px-4 relative overflow-hidden">
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="bg-white text-primary font-bold px-4 py-1 rounded-full text-sm md:text-base inline-block mb-4 shadow-md">
+        他のチームからの参加も大歓迎！親子で参加できるオンライン特別講座
+      </span>
+      <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4 drop-shadow-md">
+        グローブを磨いて、<br/>心を育てよう！✨
+      </h1>
+      <p class="text-xl md:text-2xl font-bold mb-6 drop-shadow">
+        〜 道具を大切にできる子は、人も大切にできる 〜
+      </p>
+      <p class="text-md md:text-lg mb-8 bg-black/20 p-4 rounded-xl inline-block">
+        たった60分で、お子様の「野球との向き合い方」が変わる！<br>
+        楽しくグローブのお手入れを学びながら、感謝の心を育みます。
+      </p>
+      <div>
+        <a href="#apply" class="inline-block bg-white text-primary font-bold text-xl py-4 px-10 rounded-full shadow-lg hover:scale-105 transition transform duration-200">
+          詳細・参加申し込みはこちら 👇
+        </a>
+      </div>
+    </div>
+    
+    <!-- 装飾の波 -->
+    <div class="wave">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- お悩み・共感セクション -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8">
+        保護者の皆様、こんな風に感じたことはありませんか？🤔
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-accent">
+          <p class="font-bold text-lg">「試合や練習から帰ってきても、グローブをカバンに入れっぱなし…」</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-accent">
+          <p class="font-bold text-lg">「上手くいかないと、すぐ道具や周りの環境のせいにしてしまう💦」</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-accent">
+          <p class="font-bold text-lg">「ヒットを打つことだけでなく、野球を通して人間的に成長してほしい🌱」</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-accent">
+          <p class="font-bold text-lg">「他のクラブの子たちはどんな風に練習してる？色々聞いてみたい！」</p>
+        </div>
+      </div>
+      <p class="mt-10 text-xl font-bold">
+        そのお悩み、<span class="text-primary text-2xl">「グローブのお手入れ」</span>で解決できるかもしれません！
+      </p>
+    </div>
+  </section>
+
+  <!-- 講座のポイント（5つの人間力） -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-primary mb-4">この講座で育つ「5つの力」🌟</h2>
+        <p class="text-lg">ただ汚れを落とすだけじゃない。心を磨く特別な時間です。[cite: 1]</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="font-bold text-xl mb-2">仲間との繋がり</h3>
+          <p class="text-sm">自分の道具を大切にできる子は、チームメイトも大切にできます。[cite: 1]</p>
+        </div>
+        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="text-4xl mb-4">🏃‍♂️</div>
+          <h3 class="font-bold text-xl mb-2">自主性と主体性</h3>
+          <p class="text-sm">言われる前に自分で管理する。一生モノの習慣が身につきます。[cite: 1]</p>
+        </div>
+        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="text-4xl mb-4">🙏</div>
+          <h3 class="font-bold text-xl mb-2">感謝する心</h3>
+          <p class="text-sm">牛の命、職人さん、買ってくれた親。背景にあるストーリーへの感謝を学びます。[cite: 1]</p>
+        </div>
+        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="text-4xl mb-4">🧘‍♂️</div>
+          <h3 class="font-bold text-xl mb-2">心のトレーニング</h3>
+          <p class="text-sm">グローブを磨きながら自分と向き合い、心を整えるメンタルトレーニングです。[cite: 1]</p>
+        </div>
+        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition md:col-span-2 lg:col-span-1 lg:col-start-2">
+          <div class="text-4xl mb-4">👨‍👩‍👦</div>
+          <h3 class="font-bold text-xl mb-2">親子の温かい会話</h3>
+          <p class="text-sm">「今日磨いた？」道具をきっかけに、家族のコミュニケーションが深まります。[cite: 1]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q&A・座談会セクション -->
+  <section class="py-16 px-4 bg-secondary/10">
+    <div class="max-w-4xl mx-auto text-center border-4 border-dashed border-secondary p-8 rounded-3xl bg-white">
+      <h2 class="text-2xl md:text-3xl font-black mb-4 flex justify-center items-center gap-2">
+        <span class="text-3xl">🗣️</span> クラブのあれこれ、質問してみませんか？
+      </h2>
+      <p class="text-lg mb-6 text-left md:text-center">
+        講座の後半では、参加者みんなで楽しくお話しする時間を設けます！<br>
+        「うちのチームはこうしてるよ！」「これってどうしたらいいの？」など、<br>
+        所属チームの垣根を越えて、保護者同士や子ども同士でワイワイ情報交換しましょう！
+      </p>
+      <div class="inline-block bg-primary text-white font-bold py-2 px-6 rounded-full">
+        初めての方も、他のクラブの方も大歓迎です！
+      </div>
+    </div>
+  </section>
+
+  <!-- 開催概要 -->
+  <section class="py-16 px-4 bg-white" id="event-details">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-black text-center text-primary mb-10">🗓 開催概要</h2>
+      <div class="bg-light p-8 rounded-3xl shadow-lg border-2 border-primary/20">
+        <ul class="space-y-6 text-lg">
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
+            <span class="font-bold w-32 text-primary">日付</span>
+            <span class="font-bold text-xl">7月26日（日）11:00 〜 12:00</span>
+          </li>
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
+            <span class="font-bold w-32 text-primary">場所</span>
+            <span>オンライン（Zoom）<br><span class="text-sm text-gray-500">※お申し込み後にURLをお送りします。全国どこからでも参加OK！</span></span>
+          </li>
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
+            <span class="font-bold w-32 text-primary">対象</span>
+            <span>野球を頑張る小・中学生と、その保護者の皆様<br><span class="text-sm text-gray-500">※当クラブ以外の方も大歓迎です！</span></span>
+          </li>
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
+            <span class="font-bold w-32 text-primary">準備するもの</span>
+            <span>
+              ✅ メモを取るもの<br>
+              ✅ 普段使っているグローブ
+            </span>
+          </li>
+          <li class="flex flex-col md:flex-row">
+            <span class="font-bold w-32 text-primary">参加費</span>
+            <span class="text-2xl font-black text-red-500">完全無料</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 講師紹介 -->
+  <section class="py-16 px-4 bg-light">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-black text-center text-primary mb-10">👨‍🔧 講師紹介</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-md flex flex-col md:flex-row items-center gap-8">
+        <div class="w-full md:w-1/3 flex justify-center">
+          <!-- 講師の画像プレースホルダー（実際の画像に差し替えてください） -->
+          <div class="w-48 h-48 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden shadow-inner border-4 border-secondary">
+            <span>伊東様のお写真</span>
+          </div>
+        </div>
+        <div class="w-full md:w-2/3">
+          <p class="text-sm text-primary font-bold mb-1">野球グローブメンテナンス×人間力育成サポーター[cite: 1]</p>
+          <h3 class="text-2xl font-black mb-4">伊東 誠弘 <span class="text-sm font-normal text-gray-600">（いとう まさひろ）</span></h3>
+          <p class="mb-4 leading-relaxed">
+            「グローブを磨くことは、単に綺麗にすることではありません。支えてくれる家族、戦う仲間、野球ができる環境という、見えない大切な存在を見つめ直す時間です。[cite: 1]」
+          </p>
+          <p class="leading-relaxed">
+            私はグローブを直す人ではなく、グローブを通じて人を育てる人です。[cite: 1] 当日は、子どもたちがワクワクしながら道具を大切にする気持ちを持てるよう、楽しくお話しさせていただきます！一緒にお話しできるのを楽しみにしています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-20 px-4 text-center" id="apply">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-black mb-6">さあ、一緒にグローブと心を磨こう！</h2>
+      <p class="text-lg mb-8">
+        ご予約・お問い合わせは、公式LINEから受け付けております。<br>
+        「参加希望！」とメッセージを送るだけでOKです👍
+      </p>
+      
+      <a href="【ここにLINEのURLを挿入】" class="btn-line inline-flex items-center justify-center gap-2 text-2xl font-bold py-5 px-12 rounded-full w-full md:w-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-line" viewBox="0 0 16 16">
+          <path d="M8 0c4.411 0 8 2.812 8 6.289 0 2.928-2.368 5.448-5.698 6.12.537.736.237 2.322-.039 3.239-.06.2-.3.84-.785.545-.59-.356-4.34-2.682-6.108-4.43C1.229 10.36 0 8.447 0 6.289 0 2.812 3.589 0 8 0zM5.022 7.686H3.493V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.154.154 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.556a.156.156 0 0 0-.155-.157zm.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.556a.156.156 0 0 0 .155-.155V4.918a.156.156 0 0 0-.155-.156h-.556zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832a.17.17 0 0 0-.013-.015v-.001a.139.139 0 0 0-.01-.01l-.003-.003a.092.092 0 0 0-.011-.009h-.001L7.88 4.79l-.003-.002a.029.029 0 0 0-.005-.003l-.008-.005h-.002l-.003-.002-.01-.004-.004-.002a.093.093 0 0 0-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.556a.156.156 0 0 0 .156-.155v-2.07l1.6 2.16a.154.154 0 0 0 .039.038l.001.001.01.006.004.002a.066.066 0 0 0 .008.004l.007.003.005.002.01.003h.003a.067.067 0 0 0 .04.006h.574c.086 0 .156-.07.156-.155V4.918a.156.156 0 0 0-.156-.156h-.556zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.155.155 0 0 0-.108.044h-.001l-.001.002-.002.003a.155.155 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.155.155 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.556a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.556a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156z"/>
+        </svg>
+        公式LINEで予約・質問する
+      </a>
+      <p class="mt-4 text-gray-500 text-sm">※クリックするとLINEアプリが開きます。</p>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="bg-dark text-white text-center py-6">
+    <p class="text-sm text-gray-400">&copy; 誠のグローブメンテナンス All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
