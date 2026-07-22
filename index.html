@@ -6,10 +6,13 @@
   <title>野球好きのためのオンライン特別講座</title>
   <meta name="description" content="心も技術も、大事なものはぜ〜んぶグローブの中！人間力を育む60分のオンライン特別講座です。">
   
-  <!-- Google Fonts: 丸みのある親しみやすいフォント -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,24 +29,46 @@
             accent: '#00A8E8', /* 爽やかなブルー */
             light: '#FFF9F0', /* 優しい背景色 */
             dark: '#333333',
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'wiggle': 'wiggle 1s ease-in-out infinite',
+            'spin-slow': 'spin 8s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-3deg)' },
+              '50%': { transform: 'rotate(3deg)' },
+            }
           }
         }
       }
     }
   </script>
   <style>
-    body { background-color: #FFF9F0; color: #333; }
+    body { background-color: #FFF9F0; color: #333; overflow-x: hidden; }
     .hero-bg {
       background: linear-gradient(135deg, #FF8A00 0%, #FFD700 100%);
+      background-size: 200% 200%;
+      animation: gradientBg 5s ease infinite;
+    }
+    @keyframes gradientBg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .btn-form {
       background-color: #FF8A00;
       color: white;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .btn-form:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 138, 0, 0.4);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 138, 0, 0.5);
     }
     .wave {
       position: absolute;
@@ -58,42 +83,53 @@
       display: block;
       width: calc(134% + 1.3px);
       height: 40px;
+      animation: waveMove 10s linear infinite;
     }
     @media (min-width: 768px) {
       .wave svg { height: 60px; }
     }
     .wave .shape-fill { fill: #FFF9F0; }
+    @keyframes waveMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-25%); }
+    }
   </style>
 </head>
 <body class="antialiased break-words">
 
   <!-- ヘッダー（Heroセクション） -->
   <header class="relative hero-bg text-white text-center pt-10 pb-24 md:pt-14 md:pb-32 px-4 overflow-hidden">
+    <!-- 装飾アイコン群 -->
+    <div class="absolute top-10 left-10 text-4xl animate-float opacity-50 hidden md:block">⚾️</div>
+    <div class="absolute bottom-32 right-20 text-5xl animate-spin-slow opacity-50 hidden md:block">🌟</div>
+    <div class="absolute top-20 right-10 text-3xl animate-bounce opacity-40 hidden md:block">✨</div>
+
     <div class="max-w-4xl mx-auto relative z-10">
       
-      <!-- 追加：講演タイトル -->
-      <p class="text-sm md:text-base font-bold mb-4 tracking-widest drop-shadow-sm">
-        ✨『ほーむBASE』 特別企画 ✨
+      <!-- 講演タイトル -->
+      <p class="text-sm md:text-base font-bold mb-4 tracking-widest drop-shadow-sm" data-aos="fade-down" data-aos-duration="1000">
+        ✨ ほーむBASE 〜こころの根っこ〜 特別講演 ✨
       </p>
 
-      <span class="bg-white text-primary font-bold px-5 py-3 rounded-2xl md:rounded-full text-sm md:text-base inline-block mb-6 shadow-md leading-relaxed">
-        心も技術も、大事なものは<br/>ぜ〜んぶグローブの中！⚾️
+      <span class="bg-white text-primary font-bold px-5 py-3 rounded-2xl md:rounded-full text-sm md:text-base inline-block mb-6 shadow-xl leading-relaxed transform hover:scale-110 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
+        野球好きな子どもたち＆保護者＆監督コーチ集まれ！<br>
+        心も技術も、大事なものはぜ〜んぶグローブの中！⚾️
       </span>
-      <p class="text-lg md:text-xl font-bold mb-2 drop-shadow">
+      <p class="text-lg md:text-xl font-bold mb-2 drop-shadow" data-aos="fade-up" data-aos-delay="400">
         野球好きのためのオンライン特別講座
       </p>
-      <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4 drop-shadow-md">
+      <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4 drop-shadow-lg animate-wiggle" data-aos="zoom-in-up" data-aos-delay="600">
         グローブを磨いて、<br/>心を育てよう！✨
       </h1>
-      <p class="text-lg md:text-2xl font-bold mb-6 drop-shadow leading-relaxed">
+      <p class="text-lg md:text-2xl font-bold mb-6 drop-shadow leading-relaxed" data-aos="fade-up" data-aos-delay="800">
         〜 道具を大切にできる子は、<br class="block md:hidden">人も大切にできる 〜
       </p>
-      <p class="text-sm md:text-lg mb-8 bg-black/20 p-4 rounded-xl inline-block text-left md:text-center leading-relaxed">
+      <p class="text-sm md:text-lg mb-8 bg-black/20 p-4 rounded-xl inline-block text-left md:text-center leading-relaxed backdrop-blur-sm" data-aos="flip-up" data-aos-delay="1000">
         たった60分で、お子様の「野球との向き合い方」が変わる！<br class="hidden md:block">
         楽しくグローブのお手入れを学びながら、感謝の心を育みます。
       </p>
-      <div class="px-2">
-        <a href="#apply" class="block md:inline-block bg-white text-primary font-bold text-lg md:text-xl py-4 px-6 md:px-10 rounded-full shadow-lg hover:scale-105 transition transform duration-200">
+      <div class="px-2" data-aos="zoom-in" data-aos-delay="1200">
+        <a href="#apply" class="block md:inline-block bg-white text-primary font-bold text-lg md:text-xl py-4 px-6 md:px-10 rounded-full shadow-2xl hover:scale-110 transition transform duration-300 animate-float">
           詳細・参加申し込みはこちら 👇
         </a>
       </div>
@@ -103,118 +139,127 @@
     <div class="wave">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill" transform="translate(1200, 0)"></path>
       </svg>
     </div>
   </header>
 
   <!-- メインビジュアル画像セクション -->
-  <section class="px-4 -mt-12 md:-mt-16 relative z-20">
-    <div class="max-w-4xl mx-auto text-center">
-      <img src="まことグラブ.jpg" alt="誠のグローブメンテナンス" class="w-full h-auto rounded-2xl shadow-xl border-4 border-white">
+  <section class="px-4 -mt-12 md:-mt-16 relative z-20" data-aos="zoom-in-up" data-aos-duration="1000">
+    <div class="max-w-4xl mx-auto text-center transform hover:-translate-y-2 transition duration-500">
+      <img src="まことグラブ.jpg" alt="誠のグローブメンテナンス" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-white">
     </div>
   </section>
 
   <!-- お悩み・共感セクション -->
-  <section class="py-12 md:py-16 px-4">
+  <section class="py-16 md:py-24 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-xl md:text-3xl font-bold text-primary mb-8 leading-snug">
+      <h2 class="text-xl md:text-3xl font-bold text-primary mb-10 leading-snug" data-aos="fade-down">
         保護者の皆様、こんな風に感じたことはありませんか？🤔
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
-        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-t-4 border-accent">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-accent transform hover:scale-105 transition duration-300" data-aos="fade-right" data-aos-delay="100">
           <p class="font-bold text-base md:text-lg">「試合や練習から帰ってきても、グローブをカバンに入れっぱなし…」</p>
         </div>
-        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-t-4 border-accent">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-accent transform hover:scale-105 transition duration-300" data-aos="fade-left" data-aos-delay="200">
           <p class="font-bold text-base md:text-lg">「上手くいかないと、すぐ道具や周りの環境のせいにしてしまう💦」</p>
         </div>
-        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-t-4 border-accent">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-accent transform hover:scale-105 transition duration-300" data-aos="fade-right" data-aos-delay="300">
           <p class="font-bold text-base md:text-lg">「ヒットを打つことだけでなく、野球を通して人間的に成長してほしい🌱」</p>
         </div>
-        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-t-4 border-accent">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-accent transform hover:scale-105 transition duration-300" data-aos="fade-left" data-aos-delay="400">
           <p class="font-bold text-base md:text-lg">「他のクラブの子たちはどんな風に練習してる？色々聞いてみたい！」</p>
         </div>
       </div>
-      <p class="mt-8 md:mt-10 text-lg md:text-xl font-bold">
-        そのお悩み、<span class="text-primary text-xl md:text-2xl block md:inline mt-2 md:mt-0">「グローブのお手入れ」</span>で解決できるかもしれません！
+      <p class="mt-12 md:mt-16 text-lg md:text-xl font-bold" data-aos="zoom-in" data-aos-delay="600">
+        そのお悩み、<span class="text-primary text-xl md:text-2xl block md:inline mt-2 md:mt-0 animate-pulse">「グローブのお手入れ」</span>で解決できるかもしれません！
       </p>
     </div>
   </section>
 
   <!-- 講座のポイント（5つの人間力） -->
-  <section class="py-12 md:py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl md:text-4xl font-black text-primary mb-4">グローブで磨く「5つの力」🌟</h2>
-        <p class="text-base md:text-lg">ただ汚れを落とすだけじゃない。<br/>心を磨く特別な時間です。</p>
+  <section class="py-16 md:py-24 px-4 bg-white relative">
+    <div class="absolute right-0 top-0 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute left-0 bottom-0 w-40 h-40 bg-primary opacity-20 rounded-full blur-3xl animate-pulse"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-primary mb-4" data-aos="fade-up">グローブで磨く「5つの力」🌟</h2>
+        <p class="text-base md:text-lg" data-aos="fade-up" data-aos-delay="100">ただ汚れを落とすだけじゃない。心を磨く特別な時間です。</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
-          <div class="text-4xl mb-4">🤝</div>
+        <!-- Card 1 -->
+        <div class="text-center p-8 bg-light rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border-b-4 border-transparent hover:border-primary" data-aos="flip-left" data-aos-delay="100">
+          <div class="text-5xl mb-4 animate-bounce">🤝</div>
           <h3 class="font-bold text-lg md:text-xl mb-2">仲間との繋がり</h3>
-          <p class="text-sm">自分の道具を大切にできる子は、<br/>チームメイトも大切にできます。</p>
+          <p class="text-sm">自分の道具を大切にできる子は、チームメイトも大切にできます。</p>
         </div>
-        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
-          <div class="text-4xl mb-4">🏃‍♂️</div>
+        <!-- Card 2 -->
+        <div class="text-center p-8 bg-light rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border-b-4 border-transparent hover:border-primary" data-aos="flip-left" data-aos-delay="200">
+          <div class="text-5xl mb-4 animate-bounce" style="animation-delay: 0.2s;">🏃‍♂️</div>
           <h3 class="font-bold text-lg md:text-xl mb-2">自主性と主体性</h3>
-          <p class="text-sm">言われる前に自分で管理する。<br/>一生モノの習慣が身につきます。</p>
+          <p class="text-sm">言われる前に自分で管理する。一生モノの習慣が身につきます。</p>
         </div>
-        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
-          <div class="text-4xl mb-4">🙏</div>
+        <!-- Card 3 -->
+        <div class="text-center p-8 bg-light rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border-b-4 border-transparent hover:border-primary" data-aos="flip-left" data-aos-delay="300">
+          <div class="text-5xl mb-4 animate-bounce" style="animation-delay: 0.4s;">🙏</div>
           <h3 class="font-bold text-lg md:text-xl mb-2">感謝する心</h3>
-          <p class="text-sm">牛の命、職人さん、買ってくれた親。<br/>背景にあるストーリーへの感謝を学びます。</p>
+          <p class="text-sm">牛の命、職人さん、買ってくれた親。背景にあるストーリーへの感謝を学びます。</p>
         </div>
-        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition">
-          <div class="text-4xl mb-4">🧘‍♂️</div>
+        <!-- Card 4 -->
+        <div class="text-center p-8 bg-light rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border-b-4 border-transparent hover:border-primary" data-aos="flip-right" data-aos-delay="400">
+          <div class="text-5xl mb-4 animate-bounce" style="animation-delay: 0.1s;">🧘‍♂️</div>
           <h3 class="font-bold text-lg md:text-xl mb-2">心のトレーニング</h3>
-          <p class="text-sm">グローブを磨きながら自分と向き合い、<br/>心を整えるメンタルトレーニングです。</p>
+          <p class="text-sm">グローブを磨きながら自分と向き合い、心を整えるメンタルトレーニングです。</p>
         </div>
-        <div class="text-center p-6 bg-light rounded-2xl shadow-sm hover:shadow-md transition md:col-span-2 lg:col-span-1 lg:col-start-2">
-          <div class="text-4xl mb-4">👨‍👩‍👦</div>
+        <!-- Card 5 -->
+        <div class="text-center p-8 bg-light rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border-b-4 border-transparent hover:border-primary md:col-span-2 lg:col-span-1 lg:col-start-2" data-aos="flip-right" data-aos-delay="500">
+          <div class="text-5xl mb-4 animate-bounce" style="animation-delay: 0.3s;">👨‍👩‍👦</div>
           <h3 class="font-bold text-lg md:text-xl mb-2">親子の温かい会話</h3>
-          <p class="text-sm">「今日磨いた？」道具をきっかけに、<br/>家族のコミュニケーションが深まります。</p>
+          <p class="text-sm">「今日磨いた？」道具をきっかけに、家族のコミュニケーションが深まります。</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Q&A・座談会セクション -->
-  <section class="py-12 md:py-16 px-4 bg-secondary/10">
-    <div class="max-w-4xl mx-auto text-center border-4 border-dashed border-secondary p-6 md:p-8 rounded-3xl bg-white">
-      <h2 class="text-xl md:text-3xl font-black mb-4 flex flex-col md:flex-row justify-center items-center gap-2 leading-tight">
-        <span class="text-3xl mb-2 md:mb-0">🗣️</span> 
+  <section class="py-16 md:py-24 px-4 bg-secondary/10 overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center border-4 border-dashed border-secondary p-8 md:p-12 rounded-3xl bg-white transform hover:scale-[1.02] transition duration-500 shadow-xl" data-aos="zoom-in-up">
+      <h2 class="text-2xl md:text-4xl font-black mb-6 flex flex-col md:flex-row justify-center items-center gap-3 leading-tight text-dark">
+        <span class="text-4xl mb-2 md:mb-0 animate-wiggle inline-block">🗣️</span> 
         <span>グラブのあれこれ、<br>質問してみませんか？</span>
       </h2>
-      <p class="text-base md:text-lg mb-6 text-left md:text-center leading-relaxed">
+      <p class="text-base md:text-lg mb-8 text-left md:text-center leading-relaxed">
         講座の後半では、参加者みんなで楽しくお話しする時間を設けます！<br class="hidden md:block">
         「うちのチームはこうしてるよ！」「これってどうしたらいいの？」など、<br class="hidden md:block">
         保護者同士や子ども同士、指導者の方も交えてワイワイ情報交換しましょう！
       </p>
-      <div class="inline-block bg-primary text-white font-bold py-3 px-6 rounded-full text-sm md:text-base w-full md:w-auto">
+      <div class="inline-block bg-primary text-white font-bold py-4 px-8 rounded-full text-base md:text-lg w-full md:w-auto animate-pulse shadow-lg" data-aos="fade-up" data-aos-delay="300">
         初めての方も大歓迎です！
       </div>
     </div>
   </section>
 
   <!-- 開催概要 -->
-  <section class="py-12 md:py-16 px-4 bg-white" id="event-details">
+  <section class="py-16 md:py-24 px-4 bg-white" id="event-details">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-black text-center text-primary mb-8">🗓 開催概要</h2>
-      <div class="bg-light p-6 md:p-8 rounded-3xl shadow-md border-2 border-primary/20">
-        <ul class="space-y-4 md:space-y-6 text-base md:text-lg">
-          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
-            <span class="font-bold w-32 text-primary mb-1 md:mb-0">日付</span>
-            <span class="font-bold text-lg md:text-xl">7月26日（日）11:00 〜 12:00</span>
+      <h2 class="text-3xl md:text-4xl font-black text-center text-primary mb-10" data-aos="fade-down">🗓 開催概要</h2>
+      <div class="bg-light p-6 md:p-10 rounded-3xl shadow-xl border-2 border-primary/20" data-aos="fade-up" data-aos-delay="200">
+        <ul class="space-y-6 md:space-y-8 text-base md:text-lg">
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200" data-aos="fade-right" data-aos-delay="300">
+            <span class="font-bold w-32 text-primary mb-1 md:mb-0 text-xl">日付</span>
+            <span class="font-bold text-lg md:text-2xl">7月26日（日）11:00 〜 12:00</span>
           </li>
-          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
-            <span class="font-bold w-32 text-primary mb-1 md:mb-0">場所</span>
-            <span>オンライン（Zoom）<br><span class="text-sm text-gray-500">※お申し込み後にURLをお送りします。全国どこからでも参加OK！</span></span>
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200" data-aos="fade-right" data-aos-delay="400">
+            <span class="font-bold w-32 text-primary mb-1 md:mb-0 text-xl">場所</span>
+            <span><span class="font-bold">オンライン（Zoom）</span><br><span class="text-sm text-gray-500 mt-1 inline-block">※お申し込み後にURLをお送りします。全国どこからでも参加OK！</span></span>
           </li>
-          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
-            <span class="font-bold w-32 text-primary mb-1 md:mb-0">対象</span>
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200" data-aos="fade-right" data-aos-delay="500">
+            <span class="font-bold w-32 text-primary mb-1 md:mb-0 text-xl">対象</span>
             <span class="leading-relaxed">
               野球を頑張る小・中学生、その保護者の方<br>
-              <span class="text-sm text-gray-700 font-normal mt-2 inline-block bg-white p-3 rounded-lg border border-gray-200 w-full">
+              <span class="text-sm text-gray-800 font-normal mt-3 inline-block bg-white p-4 rounded-xl border border-gray-200 w-full shadow-sm">
                 💡 <b>参加スタイルは自由です！</b><br>
                 ・お子様だけ、保護者の方だけのご参加OK<br>
                 ・指導者の方、野球が大好きな方のご参加OK<br>
@@ -222,16 +267,16 @@
               </span>
             </span>
           </li>
-          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200">
-            <span class="font-bold w-32 text-primary mb-1 md:mb-0">準備するもの</span>
+          <li class="flex flex-col md:flex-row border-b pb-4 border-gray-200" data-aos="fade-right" data-aos-delay="600">
+            <span class="font-bold w-32 text-primary mb-1 md:mb-0 text-xl">準備するもの</span>
             <span class="leading-relaxed">
               ✅ メモを取るもの<br>
               ✅ 普段使っているグローブ
             </span>
           </li>
-          <li class="flex flex-col md:flex-row pt-2">
-            <span class="font-bold w-32 text-primary mb-1 md:mb-0 flex items-center">参加費</span>
-            <span class="text-2xl md:text-3xl font-black text-red-500">無料</span>
+          <li class="flex flex-col md:flex-row pt-2" data-aos="zoom-in" data-aos-delay="700">
+            <span class="font-bold w-32 text-primary mb-1 md:mb-0 flex items-center text-xl">参加費</span>
+            <span class="text-3xl md:text-5xl font-black text-red-500 animate-bounce">無料</span>
           </li>
         </ul>
       </div>
@@ -239,22 +284,23 @@
   </section>
 
   <!-- 講師紹介 -->
-  <section class="py-12 md:py-16 px-4 bg-light">
+  <section class="py-16 md:py-24 px-4 bg-light overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-black text-center text-primary mb-8">👨‍🔧 講師紹介</h2>
-      <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-6 md:gap-8">
-        <div class="w-full md:w-1/3 flex justify-center">
-          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden shadow-inner border-4 border-secondary">
+      <h2 class="text-3xl md:text-4xl font-black text-center text-primary mb-10" data-aos="fade-down">👨‍🔧 講師紹介</h2>
+      <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-full md:w-1/3 flex justify-center" data-aos="zoom-in-right" data-aos-delay="400">
+          <div class="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden shadow-inner border-4 border-secondary transform hover:rotate-6 transition duration-300">
+            <!-- 指示通り「グラブまこと.jpg」を指定 -->
             <img src="グラブまこと.jpg" alt="伊東 誠弘" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="w-full md:w-2/3 text-center md:text-left">
-          <p class="text-xs md:text-sm text-primary font-bold mb-1">野球グローブメンテナンス×人間力育成サポーター</p>
-          <h3 class="text-xl md:text-2xl font-black mb-4">伊東 誠弘 <span class="text-sm font-normal text-gray-600">（いとう あきひろ）</span></h3>
-          <p class="mb-4 leading-relaxed text-sm md:text-base text-left">
+        <div class="w-full md:w-2/3 text-center md:text-left" data-aos="fade-left" data-aos-delay="500">
+          <p class="text-sm md:text-base text-primary font-bold mb-2">野球グローブメンテナンス×人間力育成サポーター</p>
+          <h3 class="text-2xl md:text-3xl font-black mb-4">伊東 誠弘 <span class="text-base font-normal text-gray-600">（いとう あきひろ）</span></h3>
+          <p class="mb-4 leading-relaxed text-sm md:text-lg text-left">
             「グローブを磨くことは、単に綺麗にすることではありません。支えてくれる家族、戦う仲間、野球ができる環境という、見えない大切な存在を見つめ直す時間です。」
           </p>
-          <p class="leading-relaxed text-sm md:text-base text-left">
+          <p class="leading-relaxed text-sm md:text-lg text-left">
             私はグローブを直す人ではなく、グローブを通じて人を育てる人です。当日は、子どもたちがワクワクしながら道具を大切にする気持ちを持てるよう、楽しくお話しさせていただきます！一緒にお話しできるのを楽しみにしています。
           </p>
         </div>
@@ -263,26 +309,26 @@
   </section>
 
   <!-- 主催者紹介 -->
-  <section class="py-12 md:py-16 px-4 bg-white">
+  <section class="py-16 md:py-24 px-4 bg-white overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-black text-center text-primary mb-8">🤝 主催者紹介</h2>
-      <div class="bg-light p-6 md:p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center gap-6 md:gap-8">
-        <div class="w-full md:w-1/3 flex justify-center">
-          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden shadow-inner border-4 border-primary">
+      <h2 class="text-3xl md:text-4xl font-black text-center text-primary mb-10" data-aos="fade-down">🤝 主催者紹介</h2>
+      <div class="bg-light p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-full md:w-1/3 flex justify-center" data-aos="zoom-in-right" data-aos-delay="400">
+          <div class="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden shadow-inner border-4 border-primary transform hover:-rotate-6 transition duration-300">
             <img src="奎一.png" alt="岡本 奎一" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="w-full md:w-2/3 text-center md:text-left">
-          <p class="text-xs md:text-sm text-primary font-bold mb-2 leading-relaxed">
+        <div class="w-full md:w-2/3 text-center md:text-left" data-aos="fade-left" data-aos-delay="500">
+          <p class="text-sm md:text-base text-primary font-bold mb-3 leading-relaxed">
             未来志創プロジェクト代表<br>
             富山西部ベースボールクラブ代表<br>
             オンライン寺子屋「ほーむBASE」主宰
           </p>
-          <h3 class="text-xl md:text-2xl font-black mb-4">岡本 奎一 <span class="text-sm font-normal text-gray-600">（けいいち先生）</span></h3>
-          <p class="mb-4 leading-relaxed text-sm md:text-base text-left">
-            元富山市公立中学校教師。個性特性分析を生かした子育て伴走サポートや志教育、チーム向けメンタルサポートを展開。中学野球クラブの代表も務める。一人一人が自分らしさをイキイキと輝かせられる人生を増やすことをミッションに活動中。
+          <h3 class="text-2xl md:text-3xl font-black mb-4">岡本 奎一 <span class="text-base font-normal text-gray-600">（けいいち先生）</span></h3>
+          <p class="mb-4 leading-relaxed text-sm md:text-lg text-left">
+            元富山市公立中学校教師。素質論を活用した子育て伴走サポートや志教育を展開。中学野球クラブ・富山西部ベースボールクラブの代表も務める。一人一人が自分らしさをイキイキと輝かせられる人生を増やすことをミッションに活動中。
           </p>
-          <p class="leading-relaxed font-bold text-primary text-sm md:text-base text-left">
+          <p class="leading-relaxed font-bold text-primary text-sm md:text-lg text-left">
             当日は皆様とお会いできるのを楽しみにしています！
           </p>
         </div>
@@ -291,16 +337,20 @@
   </section>
 
   <!-- CTAセクション（フォームへ誘導） -->
-  <section class="py-16 md:py-20 px-4 text-center bg-secondary/20" id="apply">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-black mb-4 md:mb-6 leading-tight">さあ、一緒にグローブと<br class="block md:hidden">心を磨こう！</h2>
-      <p class="text-sm md:text-lg mb-8 leading-relaxed">
+  <section class="py-20 md:py-32 px-4 text-center bg-secondary/20 relative overflow-hidden" id="apply">
+    <!-- デコレーション -->
+    <div class="absolute top-10 left-1/4 w-20 h-20 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob"></div>
+    <div class="absolute top-10 right-1/4 w-20 h-20 bg-accent rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-2000"></div>
+    
+    <div class="max-w-3xl mx-auto relative z-10" data-aos="zoom-in-up" data-aos-duration="1000">
+      <h2 class="text-3xl md:text-5xl font-black mb-6 md:mb-8 leading-tight">さあ、一緒にグローブと<br class="block md:hidden">心を磨こう！</h2>
+      <p class="text-base md:text-xl mb-10 leading-relaxed font-bold">
         以下のボタンより、専用の申し込みフォームへお進みください。<br>
         必要事項をご入力いただければ、すぐにご予約が完了します👍
       </p>
       
-      <a href="【ここにフォームのURLを挿入】" class="btn-form inline-flex items-center justify-center gap-2 text-lg md:text-2xl font-bold py-5 px-8 md:px-12 rounded-full w-full md:w-auto shadow-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+      <a href="【ここにフォームのURLを挿入】" class="btn-form inline-flex items-center justify-center gap-3 text-xl md:text-3xl font-black py-6 px-10 md:px-16 rounded-full w-full md:w-auto shadow-2xl animate-bounce hover:animate-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
           <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
           <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
         </svg>
@@ -310,9 +360,19 @@
   </section>
 
   <!-- フッター -->
-  <footer class="bg-dark text-white text-center py-6">
-    <p class="text-xs md:text-sm text-gray-400">&copy; 未来志創プロジェクト / 誠のグローブメンテナンス All Rights Reserved.</p>
+  <footer class="bg-dark text-white text-center py-8">
+    <p class="text-sm md:text-base text-gray-400">&copy; 未来志創プロジェクト / 誠のグローブメンテナンス All Rights Reserved.</p>
   </footer>
 
+  <!-- AOS JS (アニメーション初期化) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false, // スクロールするたびにアニメーションを実行
+      offset: 100, // 要素が100px見えたら発火
+      duration: 800, // アニメーションの長さ(ms)
+      easing: 'ease-out-cubic',
+    });
+  </script>
 </body>
 </html>
